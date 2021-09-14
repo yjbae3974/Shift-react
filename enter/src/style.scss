@@ -1,0 +1,79 @@
+body{
+    height: 200vh;
+}
+
+.bg-nav{
+    background-color: #0D1E33;
+}
+.nav-title{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff!important;
+}
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
+.navbar-dark .navbar-toggler{
+    border-color: transparent;
+}
+.navbar-collapse{
+    flex-grow: 0;
+}
+@media screen and (min-width: 992px) {
+    .navbar.navbar-expand-lg{
+        height: clamp(71px,5vw,113px);
+    }
+    .navbar-nav{
+        a{
+            margin: 0px 10px;
+        }
+    }
+}
+.nav-link{
+    &.active{
+        font-weight: 700;
+    }
+}
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+//여기서부터 information css
+.sticky-nav{
+    background-color: #fff;
+    opacity: 0.8;
+    width: 100vw;
+    position: fixed;
+    top: clamp(71px,5vw,113px);
+    justify-content: flex-end;
+    padding-right: clamp(0px, 15vw, 300px);
+
+}
+.nav-tabs{
+    border-bottom: none;
+}
+.nav-link{
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+    &:hover{
+        border: none;
+    }
+    &:focus{
+        border: none;
+    }
+    &::after{
+        border: none;
+    }
+    &::before{
+        border: none;
+    }
+}
+.nav-link.active{
+    border: none;
+}
+.tab-content{
+    margin-top: clamp(71px,5vw,113px);
+}
