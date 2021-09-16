@@ -1,5 +1,8 @@
+@import url("https://use.fontawesome.com/releases/v5.15.2/css/all.css");
+
 body{
     height: 200vh;
+    background-color: turquoise;
 }
 
 .bg-nav{
@@ -46,31 +49,36 @@ a, a:hover, a:focus, a:active {
 .sticky-nav{
     background-color: #fff;
     opacity: 0.8;
-    width: 100vw;
     position: fixed;
     top: clamp(71px,5vw,113px);
-    justify-content: flex-end;
-    padding-right: clamp(0px, 15vw, 300px);
+    .btn-content-change{
+        border-color: #17375e;
+        background-color: transparent;
+        padding: 10px;
+        border: none;
+        transition: background-color 0.5s ease-in-out;
+        &:hover{
+            background-color: #eeeeee;
+        }
+        &.active{
 
+            border-bottom: 2px solid #17375e;
+        }
+    }
+}
+.home-content{
+    display: none;
+    margin-top: clamp(71px,5vw,113px);
+    transition: display .8s ease-in-out,opacity .15s linear;;
+    &.active{
+        display: block;
+    }
 }
 .nav-tabs{
+    
     border-bottom: none;
 }
-.nav-link{
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
-    &:hover{
-        border: none;
-    }
-    &:focus{
-        border: none;
-    }
-    &::after{
-        border: none;
-    }
-    &::before{
-        border: none;
-    }
-}
+
 .nav-link.active{
     border: none;
 }
