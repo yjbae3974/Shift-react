@@ -7,7 +7,7 @@ import Announce from "./components/Announce";
 import History from "./components/History";
 import Home from "./components/Home";
 import Partners from "./components/Partners";
-import './style.scss';
+import './style/style.scss';
 function App() {
   let [activePath, setActivePath] = useState(1);
   return (
@@ -17,6 +17,9 @@ function App() {
       <Route exact path="/"><Home></Home></Route>
       <Route exact path="/home">
           <Home></Home>
+        </Route>
+        <Route exact path="/announce">
+          <Announce></Announce>
         </Route>
         <Route exact path ="/history">
           <div>heoolo</div>

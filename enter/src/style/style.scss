@@ -1,0 +1,203 @@
+@import url("https://use.fontawesome.com/releases/v5.15.2/css/all.css");
+@import "_fonts.scss";
+$main-black: #060b11;
+$main-color: #17375e;
+body{
+    min-height: 200vh;
+    font-family: "Roboto, sans-serif";
+}
+
+.bg-nav{
+    background-color: #0D1E33;
+}
+.nav-title{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff!important;
+}
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
+.navbar-dark .navbar-toggler{
+    border-color: transparent;
+}
+.navbar-collapse{
+    flex-grow: 0;
+}
+@media screen and (min-width: 992px) {
+    .navbar.navbar-expand-lg{
+        height: clamp(71px,5vw,113px);
+    }
+    .navbar-nav{
+        a{
+            margin: 0px 10px;
+        }
+    }
+}
+.nav-link{
+    &.active{
+        font-weight: 700;
+    }
+}
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+//여기서부터 information css
+.sticky-nav{
+    background-color: #fff;
+    opacity: 0.8;
+    position: fixed;
+    top: clamp(71px,5vw,113px);
+    z-index: 2;
+    .btn-content-change{
+        border-color: #17375e;
+        background-color: transparent;
+        padding: 10px;
+        border: none;
+        transition: background-color 0.5s ease-in-out;
+        &:hover{
+            background-color: #eeeeee;
+        }
+        &.active{
+
+            border-bottom: 2px solid #17375e;
+        }
+    }
+}
+.home-content{
+    display: none;
+    margin-top: clamp(71px,5vw,113px);
+    transition: display .8s ease-in-out,opacity .15s linear;
+    &.active{
+        display: block;
+    }
+}
+.nav-tabs{
+    
+    border-bottom: none;
+}
+
+.nav-link.active{
+    border: none;
+}
+.tab-content{
+    margin-top: clamp(71px,5vw,113px);
+}
+@media screen and (max-width: 992px){
+    .mobile-none{
+        display: none;
+    }
+}
+
+// 여기서부터 home-company
+
+.position-dot{
+    position: absolute;
+    height: 100vh;
+    max-width: 1920px!important;
+    z-index: -1;
+    .dot{
+        &-1{
+            position: absolute;
+    height: 740px;
+    width: 740px;
+    border-radius: 50%;
+    background-color: #17375e;
+    opacity: 0.6;
+    right: -15%;
+    top: -150px;
+    z-index: 0;
+    overflow: hidden;
+        }
+        &-2{
+            position: absolute;
+    height: 72px;
+    width: 72px;
+    border-radius: 50%;
+    background-color: #17375e;
+    top: 600px;
+    right: 20%;
+    z-index: 0;
+        }
+        &-3{
+            position: absolute;
+    height: 72px;
+    width: 72px;
+    border-radius: 50%;
+    background-color: #17375e;
+    opacity: 0.8;
+    right: 48%;
+    top: 300px;
+        }
+    }
+}
+.introduce-company-top{
+    position: relative;
+    overflow: hidden;
+    .title{
+        @extend %title-font;
+        font-weight: 700;
+    }
+    .inner{
+        padding: 10px;
+        padding-top: 57px;
+        color: $main-black;
+        .d-flex.row{
+            padding: 60px 0px;
+        }
+    }
+    .below-title-content{
+        @extend %content-font;
+    }
+}
+.service-img{
+    width: clamp(300px, 28vw, 518.61px);
+    aspect-ratio: 1.41 / 1;
+    box-shadow: 48px 24px 48px rgba(24, 37, 56, 0.12);
+    border-radius: 8px;
+    transform: rotate(-7deg);
+}
+.about-shift{
+    font-weight: 700;
+    font-size: 22px;
+}
+.btn-getStarted{
+    text-align: center;
+    padding: 12px 32px;
+    background-color: $main-color;
+    color: white;
+    transition: background-color .15s ease-in;
+    &:hover{
+        color: white;
+        background-color: black;
+    }
+}
+.sub-title{
+    @extend %subtitle-font;
+    font-weight: 700;
+}
+.from300-100{
+    padding-top: clamp(100px, 10vw, 300px);
+}
+.img-ver{
+    width: clamp(80%, 30vw, 100%);
+}
+.img-contain{
+    width: 100%;
+    object-fit: contain;
+}
+.stick{
+    width: 6px;
+    height: 224px;
+    background-color: $main-color;
+}
+.stick-ver{
+    height: 6px;
+    width: 100%;
+    background-color: $main-color;
+}

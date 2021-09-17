@@ -1,4 +1,4 @@
-
+import {Link} from 'react-router-dom';
 
 function HomeCompany(){
     return(
@@ -9,10 +9,8 @@ function HomeCompany(){
 				  <div className="dot-3 mobile-none"></div>
 			</div>
 			<div className="container">
-				<div>
-				  
-				  <img src="" alt=""/>
-				  <div>
+				<div className="introduce-company-top">
+				  <div className="inner">
 					  <div className="row d-flex align-items-center">
 						  <div className="col-lg-6">
 							  <p className="about-shift">About Shift</p>
@@ -20,7 +18,7 @@ function HomeCompany(){
 							  <p className="mt-2 below-title-content">극초기 스타트업을 위한 엑셀러레이팅 서비스로,
 								<br/>데이터의 단기 및 장기 관리, VC/AC 연결, 컨설팅 등 다양한 서비스를
 							<br/>각 스타트업마다 맞춤형으로 제공합니다.</p>
-							  <a href="../main.html" className="button mt-5">Get Started</a>
+							  <Link to={"/announce"} className="btn-getStarted mt-5">Get Started</Link>
 						  </div>
 						  <div className="col-lg-6">
 							  <img className="service-img mobile-none" src="../img\office-business-meeting-5472251_1920.jpg" alt=""/>
@@ -35,7 +33,7 @@ function HomeCompany(){
 				<p className="sub-title">About Service</p>
 				<div className="row">
 				  <div className="col-lg-7">
-					<img className="mt-5 mobile-nopad" src="../img\About Service\laptop-3196481_1920 (1).jpg" alt=""/>
+					<img className="mt-5 mobile-nopad img-contain" src="../img\About Service\laptop-3196481_1920 (1).jpg" alt=""/>
 				  </div>
 				  <div className="col-lg-5 mt-5 d-flex justify-content-end">
 					<div className="me-3">
@@ -50,17 +48,16 @@ function HomeCompany(){
 						기업 간의 시너지 효과를 만듭니다.
 					  </p>
 					</div>
-					<div></div>
+					<div className="stick"></div>
 				  </div>
 				</div>
-				<div className="row">
-				  <div className="col-lg-6 d-flex">
+				<div className="row" style={{marginTop: '153px'}}>
+				  <div className="col-lg-6 d-grid">
 					<div className="row">
-					  <div className="col-lg-auto">
-						<div></div>
-	  
-					  </div>
 					  <div className="col">
+						<div className=" stick-ver mobile-none"></div>
+					  </div>
+					  <div className="col-lg-auto">
 						<div className="ms-5">
 						  <p className="sub-subtitle">Service for Who?</p>
 						  <p className="sub-content">
@@ -78,16 +75,16 @@ function HomeCompany(){
 					
 				  </div>
 				  <div className="col-lg-6">
-					<img className="mobile-nopad" src="../img\About Service\revenue-1704073_1280.png" alt=""/>
+					<img className="mobile-nopad img-contain" src="../img\About Service\revenue-1704073_1280.png" alt=""/>
 				  </div>
 				</div>
-				<div className="row" >
-				  <div className="col-lg-6">
+				<div className="row" style={{marginTop: '153px'}}>
+				  <div className="col-lg-6 d-flex justify-content-center">
 					<img className="img-ver" src="../img\About Service\refugees-1020163_1920.jpg" alt=""/>
 				  </div>
 				  <div className="col-lg-6 mobile-mt5" >
 					<div className="d-flex">
-					  <div className=""></div>
+					  <div className="stick"></div>
 					<div className="ms-5">
 					  <p className="sub-subtitle">Why this Service?</p>
 					  <p className="sub-content">
