@@ -1,9 +1,108 @@
 import {Link} from 'react-router-dom';
-
+import {useState, useEffect} from 'react';
 function HomeCompany(){
+	let bullets = document.getElementsByClassName("bullet");
+	let progress = document.getElementsByClassName("progress-line");
+let [stepNum,setStepNum] = useState(0);
+	useEffect(()=>{
+		console.log(stepNum);
+		for(let i =1;i<=stepNum;i++){
+			if(bullets[i].classList.contains("completed")===false){
+				bullets[i].classList.add("completed");
+			}
+			if(progress[i-1].classList.contains("disabled")===true){
+				progress[i-1].classList.remove("disabled");
+			}
+		}
+		for(let i = stepNum+1;i<4;i++){
+			if(bullets[i].classList.contains("completed")===true){
+				bullets[i].classList.remove("completed");
+			}
+			if(progress[i-1].classList.contains("disabled")===false){
+				progress[i-1].classList.add("disabled");
+			}
+		}
+	},[stepNum]);
+var contentText = [
+	`<div class="row">
+	<div class="col-lg-6">
+		<div class="sub-subtitle">
+			Screening
+		</div>
+		<div class="sub-content mt-5">
+			스타트업을 대상으로 아이디어를 접수합니다.<br>
+			각 아이디어를 분석하여 가능성 없는 아이디어를 배제하고<br>
+			서비스를 제공할 아이디어를 뽑는 과정을 거칩니다.
+		</div>
+	</div>
+	<div class="col-lg-6 d-flex justify-content-center">
+		<img class="mt-5 mt-lg-0" style="max-width: 95%" src="../img/Service Process/image 69.png" alt="">
+	</div>
+</div>`,
+`<div class="row">
+<div class="col-lg-6">
+	<div class="sub-subtitle">
+		Selecting Service
+	</div>
+	<div class="sub-content mt-5">
+		스타트업 진행 정도, 스타트업의 종류,<br>
+		제공하는 서비스의 난이도 차이에 따라<br>
+		서비스를 4단계로 나누어 진행합니다.<br>
+		스타트업은 원하는 서비스를 선택할 수 있습니다.
+	</div>
+</div>
+<div class="col-lg-6 d-flex justify-content-center">
+	<img class="mt-5 mt-lg-0" style="max-width: 95%" src="../img/Service Process/image 72.png" alt="">
+</div>
+</div>`,
+`<div class="row">
+<div class="col-lg-6">
+	<div class="sub-subtitle">
+		Consulting & Deal making
+	</div>
+	<div class="sub-content mt-5">
+		Idad Pool을 접수하고, 시장 검증을 통해 초기 데이터를 생성합니다.<br>
+		데이터를 기반으로 적절한 VC/AC를 분석하여<br>
+		Idea Business와 VC/AC 사이를 조율합니다.<br>
+		또한 아이디어를 정부/지자체, VC/AC, 일반 기업 등으로 전달하여<br>
+		원활하게 대규모 투자가 이루어질 수 있도록 도움을 줍니다.
+	</div>
+</div>
+<div class="col-lg-6 d-flex justify-content-center">
+	<img class="mt-5 mt-lg-0" style="max-width: 95%" src="../img/Service Process/image 73.png" alt="">
+</div>
+</div>`,
+`<div class="row">
+<div class="col-lg-4">
+	<div class="sub-subtitle">
+		Securitization
+	</div>
+	<div class="sub-content mt-4">
+		아이디어나 상품에 대해 증권화를 진행합니다.
+	</div>
+	<div class="d-flex justify-content-center">
+	<img class="mt-5 mt-lg-0" style="max-width: 100%;" src="../img/Service Process/마켓 1.png">
+	</div>
+</div>
+<div class="col-lg-8 d-flex justify-content-center">
+	<div class="row">
+	<div class="col-lg-7 d-flex justify-content-center">
+	<img src="../img/Service Process/로그인한 후 메인페이지 1.png" style="max-width: 100%;">
+	</div>
+	<div class="col-lg-5 d-flex justify-content-center">
+	<img src="../img/Service Process/마켓-클릭 (1) 1.png" style="max-width: 100%;">
+	</div>
+	</div>
+	
+</div>
+</div>`
+	
+];
+
+
     return(
         <>
-                    <div className="container-fluid position-dot">
+                    <div className="container-fluid position-dot" style={{overflow:'hidden'}}>
 				<div className="dot-1"></div>
 				  <div className="dot-2 mobile-none"></div>
 				  <div className="dot-3 mobile-none"></div>
@@ -33,7 +132,7 @@ function HomeCompany(){
 				<p className="sub-title">About Service</p>
 				<div className="row">
 				  <div className="col-lg-7">
-					<img className="mt-5 mobile-nopad img-contain" src="../img\About Service\laptop-3196481_1920 (1).jpg" alt=""/>
+					<img className="mt-5 ps-lg-5 img-contain" src="../img\About Service\laptop-3196481_1920 (1).jpg" alt=""/>
 				  </div>
 				  <div className="col-lg-5 mt-5 d-flex justify-content-end">
 					<div className="me-3">
@@ -52,7 +151,7 @@ function HomeCompany(){
 				  </div>
 				</div>
 				<div className="row" style={{marginTop: '153px'}}>
-				  <div className="col-lg-6 d-grid">
+				  <div className="col-lg-6 d-grid order-lg-1 order-2">
 					<div className="row">
 					  <div className="col">
 						<div className=" stick-ver mobile-none"></div>
@@ -75,7 +174,7 @@ function HomeCompany(){
 					
 				  </div>
 				  <div className="col-lg-6">
-					<img className="mobile-nopad img-contain" src="../img\About Service\revenue-1704073_1280.png" alt=""/>
+					<img className="pl-lg-5 img-contain" src="../img\About Service\revenue-1704073_1280.png" alt=""/>
 				  </div>
 				</div>
 				<div className="row" style={{marginTop: '153px'}}>
@@ -102,7 +201,7 @@ function HomeCompany(){
 				  </div>
 				</div>
 			  </div>
-			  <p className="sub-title">Service detail</p>
+			  <p className="sub-title" style={{marginTop: '187px'}}>Service detail</p>
 			  <div className="text-center">
 				  <div className="sub-subtitle">Service Process</div>
 				  <div className="sub-content mt-3">
@@ -117,7 +216,7 @@ function HomeCompany(){
 					  
 					  <div className="step">
 						  <div className="d-flex align-items-center">
-							  <div className="bullet completed" onclick="goSteps(0)">1</div>
+							  <div className="bullet completed" onClick={()=>{setStepNum(0)}}>1</div>
 							  <div className="progress-line"></div>
 						  </div>				
 						  <p className="step-text">Step 1</p>
@@ -125,21 +224,21 @@ function HomeCompany(){
 					  </div>
 					  <div className="step">
 						  <div className="d-flex align-items-center">
-							  <div className="bullet" onclick="goSteps(1)">2</div>
+							  <div className="bullet" onClick={()=>{setStepNum(1)}}>2</div>
 							  <div className="progress-line disabled"></div>
 						  </div>
 						  <p className="step-text">Step 2</p>
 					  </div>
 					  <div className="step">
 						  <div className="d-flex align-items-center">
-							  <div className="bullet" onclick="goSteps(2)">3</div>
+							  <div className="bullet" onClick={()=>{setStepNum(2)}}>3</div>
 							  <div className="progress-line disabled"></div>
 						  </div>
 						  <p className="step-text">Step 3</p>
 					  </div>
 					  <div className="step">
 						  <div className="d-flex align-items-center">
-							  <div className="bullet" onclick="goSteps(3)">4</div>
+							  <div className="bullet" onClick={()=>{setStepNum(3)}}>4</div>
 							  
 						  </div>
 						  <p className="step-text">Step 4</p>
@@ -148,13 +247,20 @@ function HomeCompany(){
 					  
 				  </div>
 				  <div id="main">
-					  <div id="content"  className="">
-						
+					  <div id="content" dangerouslySetInnerHTML={
+						   { __html: {
+								0:contentText[0],
+								1:contentText[1],
+								2:contentText[2],
+								3:contentText[3]
+							}[stepNum]}
+					  }>
+						 		
 					  </div>
 					  
 				  </div>
 			  </div>
-			  <p className="sub-subtitle text-center">Service UX/UI</p>
+			  <p className="sub-subtitle text-center" style={{marginTop: '120px'}}>Service UX/UI</p>
 			  <p className="sub-content text-center">
 				  Shift 서비스가 어떻게 구성되어 있는지 사이트 페이지를 보여줍니다.
 			  </p>
@@ -168,7 +274,7 @@ function HomeCompany(){
 					  
 					  
 				  </div>
-				  <div className="col-md-6 text-center d-flex justify-content-center">
+				  <div className="col-md-6 text-center d-flex justify-content-center mt-5 mt-md-0">
 					<div className="content-box mobile-nopad">
 						<p className="font-weight-bold mt-5 mt-lg-0">마이페이지</p>
 						<p>투자자들이 자신의 머니나 투자 현황을<br/> 확인할 수 있는 페이지입니다.</p>
@@ -186,7 +292,7 @@ function HomeCompany(){
 					  </div>
 					  
 				  </div>
-				  <div className="col-md-6 text-center d-flex justify-content-center">
+				  <div className="col-md-6 text-center d-flex justify-content-center mt-5 mt-md-0">
 					<div className="content-box mobile-nopad">
 						
 						<p className="font-weight-bold mt-5 mt-lg-0">상품 페이지</p>
@@ -201,14 +307,14 @@ function HomeCompany(){
 			  </div>
 			
 			</div>
-			  <section className="card wow fadeIn mt-5">
+			  <section className="card wow fadeIn mt-5 company-card" style={{borderRadius: 0}}>
 				  <div className="container card-shift">
 					  <div className="card-body text-white text-center">
 						  <p className="card-font mb-5">
 							  Shift<br/>
 							  스타트업 초기 엑셀러레이팅 서비스
 						  </p>
-						  <a className="btn" >Contact now `{'>'}`</a>
+						  <a className="btn btn-contact">Contact now {'>'}</a>
 					  </div>
 					  <div className="below-title text-center d-flex flex-md-row flex-column-reverse justify-content-between text-white mt-3 mt-lg-5">
 						<div className="mt-3 mb-3"><i className="far fa-check-circle"></i> 데이터 관리 제공</div>

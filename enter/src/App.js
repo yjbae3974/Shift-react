@@ -7,6 +7,7 @@ import Announce from "./components/Announce";
 import History from "./components/History";
 import Home from "./components/Home";
 import Partners from "./components/Partners";
+import Footer from './components/Footer';
 import './style/style.scss';
 function App() {
   let [activePath, setActivePath] = useState(1);
@@ -28,7 +29,7 @@ function App() {
           <div>history</div>
         </Route>
       </Switch>
-      <div>{activePath}</div>
+      <Footer></Footer>
     </div>
   );
 }

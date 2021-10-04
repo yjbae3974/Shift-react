@@ -1,6 +1,7 @@
 import {Nav,Tab,Tabs,Container} from 'react-bootstrap'
 import {useState,useEffect} from 'react';
 import HomeCompany from './Home-company';
+import HomeService from './Home-service';
 function Home(){
     let [active, setActive] = useState(1);
     let btn = document.getElementsByClassName('btn-content-change');
@@ -41,7 +42,9 @@ function Home(){
         <div className="home-content">
           <HomeCompany></HomeCompany>
         </div>
-        <div className="home-content">ksdljfklsdjfklsdjfklsdjlkjf</div>
+        <div className="home-content">
+          <HomeService></HomeService>
+        </div>
 
         
 </>
