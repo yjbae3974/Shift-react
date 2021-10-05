@@ -13,6 +13,9 @@
 %sub-content-font{
     font-size: clamp(12px, 1.8vw,16px);
 }
+%sub-content-enter-font{
+    font-size: clamp(14px, 2vw,16px);
+}
 %card-font{
     font-size: clamp(30px, 5vw, 48px);
 }

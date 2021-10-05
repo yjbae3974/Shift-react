@@ -13,7 +13,9 @@ body{
     -moz-box-sizing: border-box;  
     box-sizing: border-box; 
 }
-
+.font-weight-bold{
+    font-weight: 700!important;
+}
 .bg-nav{
     background-color: #0D1E33;
 }
@@ -358,4 +360,148 @@ a, a:hover, a:focus, a:active {
     span:nth-child(8){
         grid-column: 1/-1;
     }
+}
+//home-company
+.p-relative{
+    position: relative;
+}
+.dot-4{
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-color: rgb(1, 61, 1);
+    opacity: 0.8;
+    right: 14px;
+    filter: blur(100px);
+}
+.dot-5{
+    position: absolute;
+    height: 272px;
+    width: 272px;
+    border-radius: 50%;
+    background-color: #17375e;
+    opacity: 0.6;
+    filter: blur(100px);
+}
+.dot-6{
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-color: rgb(150, 128, 87);
+    opacity: 0.4;
+    filter: blur(100px);
+    top: 400px;
+    right: 50%;
+}
+.company-top{
+    padding: 57px 10px;
+    color: $main-black;
+    &-text{
+        p:nth-child(1){
+            font-weight: 700;
+            font-size: 18px;
+        }
+        p:nth-child(2){
+            font-family: 'Noto Sans KR', sans-serif;
+            @extend %title-font;
+            font-weight: 700;
+            
+        }
+        p:nth-child(3){
+            font-size: 18px;
+        }
+    }
+}
+.sub-content-enter{
+    @extend %sub-content-enter-font;
+    color: #808080;
+}
+.clip-wrap{
+    position: relative;
+    height: clamp(200px,60vw,430px);
+}
+.img-clip {
+    position: absolute;
+    top: -100px;
+    clip: rect(100px,1920px,530px,0px);
+    width: 100%;
+}
+.company-vision-wrap{
+    background-color: #f9f9f9;
+    margin-top: 100px;
+    .upper-vision{
+        padding: clamp(70px, 15vw, 100px) 0px;
+        position: relative;
+    }
+}
+.opinion-title{
+    position: absolute;
+    top: 100px;
+    left: 0%;
+    opacity: 0.35;
+    width: clamp(60px, 10vw, 143px);
+    @media screen and (max-width: 576px) {
+        &{
+            
+        }
+        
+    }
+}
+.company-vision{
+    padding: clamp(50px, 5vw, 70px) clamp(30px, 6vw, 70px);
+    .sub-title{
+        font-family: Inter;
+        font-style: normal;
+        color: #18191f;
+        font-weight: 900;
+        line-height: clamp(1rem, 7.5vw, 4rem);
+    }
+    div{
+        color: #18191f;
+    }
+}
+.company-box{
+    position: relative;
+    padding: 32px 64px;
+    background-color: #fff;
+    box-shadow: 0px 10px 20px rgb(212, 212, 212);
+    border-radius: 8px;
+    .opinion-icon{
+        position: absolute;
+        top: 32px;
+        left: 32px;
+        width: 16px;
+        height: auto;
+        opacity: 0.35;
+    }
+    .box-content{
+        font-size: clamp(16px,2.5vw,18px);
+        color: #18191f;
+        line-height: clamp(1.5rem,4vw, 2rem);
+        &:nth-child(1){
+            min-height: 160px;
+        }
+    }
+}
+.position-rewind{
+    position: relative;
+    top: -120px;
+    @media screen and (max-width: 992px) {
+        &{
+            position: inherit;
+            margin-top: 50px!important;
+            top: 0px;
+        }
+        
+    }
+}
+.lh{
+    line-height: clamp(2rem, 3vw, 40px);
+}
+.company-promotion-phase{
+    max-height: 480px;
+    width: 100%;
+    object-fit: cover;
 }
