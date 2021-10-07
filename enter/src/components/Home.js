@@ -25,16 +25,8 @@ function Home(){
     return(
         <>
 
-        {/* <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" classNameName="mb-3 sticky-nav" transition={false}>
-        <Tab eventKey="home" title="서비스 소개">
-          ㄴㅇㄹㅇㄹㄴ
-        </Tab>
-        <Tab eventKey="profile" title="회사소개">
-          ㄴㅇㄹㅇㄴㄹ
-        </Tab>
-        </Tabs> */}
         <div className="container-fluid sticky-nav">
-          <div className="container d-flex justify-content-end">
+          <div className="container d-flex justify-content-lg-end justify-content-center">
             <button className="btn-content-change active" onClick={()=>setActive(1)}>서비스 소개</button>
             <button className="btn-content-change" onClick={()=>setActive(2)}>회사 소개</button>
           </div>

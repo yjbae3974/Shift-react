@@ -130,7 +130,7 @@ function HomeService(){
 					
 				</div>
 			</div>
-			<section className="card wow fadeIn">
+			<section className="card wow fadeIn company-card" style={{marginTop: '100px', borderRadius:'0px'}}>
 				<div className="container karlxyz">
 					<div className="card-body text-white">
 						<div className="row">
@@ -139,16 +139,16 @@ function HomeService(){
 									<img className="col-lg-8 col-md-6 col-sm-8" src="../img\협력사\1_(35퍼센트_회색)_회색_단색_배경화면_180303.png"/>
 								</div>
 							</div>
-							<div className="col-lg-6 mobile-text-center">
+							<div className="col-lg-6 mobile-text-center mt-sm-0 mt-5">
 								<p className="sub-title karl">
 									CEO 인사말
 								</p>
 								<p className="kyu">김용운(Kim Yong Un)</p>
-								<div className="kyu-2">
+								<div className="kyu-2 text-center text-lg-start">
 									스타트업의 더 나은 성장<br/>
 									투자자의 더 나은 투자를 위해 노력하겠습니다.
 								</div>
-								<div className="mt-3 mobile-text-left kyu-3 text-center text-lg-start">
+								<div className="mt-3 kyu-3 text-center text-lg-start">
 									저 또한 스타트업을 진행해보고, 근무도 해보면서 극초기 스타트업의 어려움을 알고 있습니다.<br/>
 									그 때의 저를 떠올리며 '이러한 서비스가 있었으면 좋았을 텐데..'하고 생각이 들었던<br/>
 									서비스를 구현한 것이 바로 Shift입니다.<br/>
