@@ -3,7 +3,7 @@ import {useState,useEffect} from 'react';
 import 공지사항 from './공지사항';
 import 도움말 from './도움말';
 import 문의사항 from './문의사항';
-import '../style/test.css';
+import '../style/checkbox.css';
 function Announce(){
     let [active, setActive] = useState(1);
     let btn = document.getElementsByClassName('btn-content-change');

@@ -4,6 +4,7 @@ import {Link, Route, Switch, useHistory} from 'react-router-dom';
 import './App.css';
 import NavbarMain from './components/NavbarMain';
 import Announce from "./components/Announce";
+import 공지사항 from "./components/공지사항-onclick";
 import History from "./components/History";
 import Home from "./components/Home";
 import Partners from "./components/Partners";
@@ -21,6 +22,8 @@ function App() {
         </Route>
         <Route exact path="/announce">
           <Announce></Announce>
+        </Route>
+        <Route exact path="/announce/:id" component={공지사항}>
         </Route>
         <Route exact path ="/history">
           <div>heoolo</div>

@@ -1,7 +1,12 @@
-
-
-function 공지사항(){
+import {useState} from 'react';
+import {Route, Link, useHistory} from 'react-router-dom';
+import Announcement from '../data/공지사항';
+function 공지사항(props){
+    let history = useHistory();
+    let [공지사항,set공지사항] = useState(Announcement);
     let checkbox = document.getElementsByClassName('checkmark');
+    const [checked,setChecked] = useState(false);
+    const handleclick = () => setChecked(!checked);
     return(
         <div>
             <div>
@@ -20,25 +25,25 @@ function 공지사항(){
                 </div>
               </div>
             </div>
-            <div className="d-flex text-white mt-1">
+            <div className="d-flex text-white mt-1 checkbox-wrapper">
                 <label className="checkbox-container mx-3">[공지]
-                    <input type="checkbox" checked="" id="announce"/>
+                    <input type="checkbox" onClick={handleclick} id="announce"/>
                     <span className="checkmark"></span>
                   </label>
                   <label className="checkbox-container mx-3">[업데이트]
-                    <input type="checkbox" checked="checked" id="update"/>
+                    <input type="checkbox" onClick={handleclick} id="update"/>
                     <span className="checkmark"></span>
                   </label>
                   <label className="checkbox-container mx-3">[이벤트]
-                    <input type="checkbox" checked="checked" id="event"/>
+                    <input type="checkbox" onClick={handleclick} id="event"/>
                     <span className="checkmark"></span>
                   </label>
                   <label className="checkbox-container mx-3">[개발현황]
-                    <input type="checkbox" checked="checked" id="develop"/>
+                    <input type="checkbox" onClick={handleclick} id="develop"/>
                     <span className="checkmark"></span>
                   </label>
                   <label className="checkbox-container mx-3">[버그수정]
-                    <input type="checkbox" checked="checked" id="debug"/>
+                    <input type="checkbox" onClick={handleclick} id="debug"/>
                     <span className="checkmark"></span>
                   </label>
             </div>
@@ -47,12 +52,53 @@ function 공지사항(){
             </div>
             </div>
         </div>
-        <div className="container d-flex justify-content-center">
-          <div className="col-xl-12">
+        <div className="container d-flex justify-content-center" style={{marginTop: '100px'}}>
+          <div className="col-xl-12 mobile-none" style={{width: '100%', maxWidth:'1280px'}}>
             <div className="table-responsive text-nowrap" id="content-placeholder">
+              <table className="table table-hover">
+                <thead className="bg-gray">
+                  <tr>
+                    <th>분류</th>
+                    <th>제목</th>
+                    <th>날짜</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {
+                    공지사항.Announcement.map((공지,index)=>{
+                      return (
+                        <tr>
+                          <th>{공지.분류}</th>
+                          <td onClick={()=>history.push("announce/"+index)} className="hr-link">{공지.제목}</td>
+                          <td>{공지.날짜}</td>
+                        </tr>
+                      )
+                    })
+
+                    
+                  }
+                </tbody>
+              </table>
             </div>
           </div>
+          <div className="mobile-display">
+          {
+                    공지사항.Announcement.map((공지,index)=>{
+                      return (
+                        <>
+                        <div className="list-wrap">
+                        <div className="list-title">{공지.분류}</div>
+                        <div onClick={()=>history.push("announce/"+index)} className="list-content hr-link">{공지.제목}
+                        </div>
+                        </div>
+                        </>
+                      )
+                    })
 
+                    
+                  }
+            
+          </div>
         </div>
         <div className="container mt-5 d-flex justify-content-center" id="number-placeholder"></div>
         </div>
