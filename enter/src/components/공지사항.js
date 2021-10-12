@@ -25,7 +25,7 @@ function 공지사항(props){
                 </div>
               </div>
             </div>
-            <div className="d-flex text-white mt-1 checkbox-wrapper">
+            <div className="d-flex justify-content-between text-white mt-1 checkbox-wrapper pb-sm-0 pb-3">
                 <label className="checkbox-container mx-3">[공지]
                     <input type="checkbox" onClick={handleclick} id="announce"/>
                     <span className="checkmark"></span>
@@ -52,7 +52,7 @@ function 공지사항(props){
             </div>
             </div>
         </div>
-        <div className="container d-flex justify-content-center" style={{marginTop: '100px'}}>
+        <div className="container d-flex justify-content-center" style={{marginTop: '100px',marginBottom: '100px'}}>
           <div className="col-xl-12 mobile-none" style={{width: '100%', maxWidth:'1280px'}}>
             <div className="table-responsive text-nowrap" id="content-placeholder">
               <table className="table table-hover">

@@ -1,5 +1,5 @@
-
-
+import 질문 from '../data/자주하는질문';
+import {Accordion} from 'react-bootstrap';
 import {useState} from 'react';
 import {Route, Link, useHistory} from 'react-router-dom';
 import Announcement from '../data/공지사항';
@@ -9,13 +9,14 @@ function 도움말(props){
     let checkbox = document.getElementsByClassName('checkmark');
     const [checked,setChecked] = useState(false);
     const handleclick = () => setChecked(!checked);
+    console.log(질문[0]);
     return(
         <div>
             <div>
             <div className="container-fluid bg-announce d-flex align-items-center announce-height">
         <div className="container col-xxl-4 col-xl-5 col-lg-6 col-md-8 d-flex justify-content-center align-items-center announce-search">
                 <p className="title mb-5 mt-5">
-                    공지사항
+                    도움말
                 </p>
                 <div className="card mb-2">
               <div className="card-body p-2">
@@ -27,82 +28,29 @@ function 도움말(props){
                 </div>
               </div>
             </div>
-            <div className="d-flex text-white mt-1 checkbox-wrapper">
-                <label className="checkbox-container mx-3">[공지]
-                    <input type="checkbox" onClick={handleclick} id="announce"/>
-                    <span className="checkmark"></span>
-                  </label>
-                  <label className="checkbox-container mx-3">[업데이트]
-                    <input type="checkbox" onClick={handleclick} id="update"/>
-                    <span className="checkmark"></span>
-                  </label>
-                  <label className="checkbox-container mx-3">[이벤트]
-                    <input type="checkbox" onClick={handleclick} id="event"/>
-                    <span className="checkmark"></span>
-                  </label>
-                  <label className="checkbox-container mx-3">[개발현황]
-                    <input type="checkbox" onClick={handleclick} id="develop"/>
-                    <span className="checkmark"></span>
-                  </label>
-                  <label className="checkbox-container mx-3">[버그수정]
-                    <input type="checkbox" onClick={handleclick} id="debug"/>
-                    <span className="checkmark"></span>
-                  </label>
-            </div>
+            
             <div>
 
             </div>
             </div>
         </div>
-        <div className="container d-flex justify-content-center" style={{marginTop: '100px'}}>
-          <div className="col-xl-12 mobile-none" style={{width: '100%', maxWidth:'1280px'}}>
-            <div className="table-responsive text-nowrap" id="content-placeholder">
-              <table className="table table-hover">
-                <thead className="bg-gray">
-                  <tr>
-                    <th>분류</th>
-                    <th>제목</th>
-                    <th>날짜</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {
-                    공지사항.Announcement.map((공지,index)=>{
-                      return (
-                        <tr>
-                          <th>{공지.분류}</th>
-                          <td className="hr-link" as={Link} to={"/"+index}>{공지.제목}</td>
-                          <td>{공지.날짜}</td>
-                        </tr>
-                      )
-                    })
-
-                    
-                  }
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div className="mobile-display">
+        <div className="container" style={{marginTop: '100px', marginBottom: '100px', minHeight: '500px'}}>
+        <Accordion defaultActiveKey="0">
           {
-                    공지사항.Announcement.map((공지,index)=>{
-                      return (
-                        <>
-                        <div className="list-wrap">
-                        <div className="list-title">{공지.분류}</div>
-                        <div onClick={()=>history.push("announce/"+index)} className="list-content hr-link">{공지.제목}
-                        </div>
-                        </div>
-                        </>
-                      )
-                    })
-
-                    
-                  }
-            
-          </div>
+            질문.map((질문,index)=>{
+              return(
+                <Accordion.Item eventKey={index}>
+                  <Accordion.Header>{질문.제목}</Accordion.Header>
+                  <Accordion.Body>
+                    {질문.내용}
+                  </Accordion.Body>
+                </Accordion.Item>
+              )
+            })
+          }
+        </Accordion>
+          
         </div>
-        <div className="container mt-5 d-flex justify-content-center" id="number-placeholder"></div>
         </div>
         </div>
     )
