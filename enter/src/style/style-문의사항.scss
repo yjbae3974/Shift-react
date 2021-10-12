@@ -1,0 +1,66 @@
+.checkmark{
+    border-color: #efefef!important;
+}
+.checkbox-container{
+    
+        color: #bfbfbf;
+    
+}
+.col-lg-6{
+    padding: 0px 40px;
+    div{
+        i{
+            color: #17375e;
+        }
+    }
+}
+.문의사항-form{
+    color: #060b11;
+    p{
+        font-size: 14px;
+    }
+    input{
+        padding: 10px 20px;
+        border-radius: 1.5rem;
+        border-color: #ebeaed!important;
+        &::placeholder{
+            color: #bfbfbf;
+        }
+    }
+    textarea{
+        padding: 12px;
+        border: 2px solid #ebeaed;
+        border-radius: 10px;
+        width: 100%;
+        &::placeholder{
+            color: #bfbfbf;
+        }
+    }
+    
+}
+.send-button{
+    background-color: #17375e;
+    border: 2px solid #17375e;
+    font-size: 18px;
+    height: 100%;
+    border-radius: 10rem;
+    padding: 0px 20px;
+}
+.address-des{
+    color: #bfbfbf;
+    line-height: 40px;
+    font-size: 18px;
+}
+
+.onSocial{
+    font-size: 22px;
+    color: #060b11;
+    margin-top: 43px;
+}
+.icons{
+    color: #bfbfbf;
+    i{
+        color: #17375e;
+        font-size: 18px;
+    }
+}

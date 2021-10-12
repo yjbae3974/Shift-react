@@ -34,7 +34,7 @@ function 도움말(props){
             </div>
             </div>
         </div>
-        <div className="container" style={{marginTop: '100px', marginBottom: '100px', minHeight: '500px'}}>
+        <div className="container" style={{marginTop: 'clamp(40px,10vw,100px)', marginBottom: '100px', minHeight: '500px'}}>
         <Accordion defaultActiveKey="0">
           {
             질문.map((질문,index)=>{
