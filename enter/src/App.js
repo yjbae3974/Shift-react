@@ -26,10 +26,10 @@ function App() {
         <Route exact path="/announce/:id" component={공지사항}>
         </Route>
         <Route exact path ="/history">
-          <div>heoolo</div>
+          <History></History>
         </Route>
         <Route exact path="/partners">
-          <div>history</div>
+          <Partners></Partners>
         </Route>
       </Switch>
       <Footer></Footer>
