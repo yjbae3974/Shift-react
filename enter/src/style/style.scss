@@ -329,6 +329,10 @@ a:active {
     }
   }
 }
+.card-font.onclick-제목{
+  color: $main-black;
+  font-size: clamp(24px, 5vw, 36px)!important;
+}
 @media screen and (max-width: 992px) {
   .company-card {
     .card-shift {

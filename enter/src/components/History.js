@@ -1,6 +1,9 @@
 import "../style/history.scss";
-
+import {useEffect} from 'react'
 function History() {
+  useEffect(()=>{
+    document.title="ENTER-연혁"
+  })
   return (
     <>
       <div className="container-fluid bg-enter">

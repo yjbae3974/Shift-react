@@ -1,6 +1,9 @@
-
+import {useEffect} from 'react'
 
 function Partners(){
+    useEffect(()=>{
+        document.title="ENTER-협력사"
+      })
     return(
             <>
             <div className="container-fluid bg-enter" style={{minHeight: '100vh'}}>

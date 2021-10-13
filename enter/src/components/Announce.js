@@ -10,7 +10,7 @@ function Announce(){
     let content = document.getElementsByClassName('home-content');
     console.log(btn[0]);
     useEffect(()=>{
-      document.title="ENTER-서비스 소개"
+      document.title="ENTER-공지사항"
     })
     useEffect(()=>{
       for(let i=0;i<3;i++){
